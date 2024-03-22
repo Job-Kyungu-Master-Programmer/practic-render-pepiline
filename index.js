@@ -3,7 +3,7 @@ const app = express()
 const path = require('path')
 
 
-app.get('/', (request, response) => {
+app.get('/ping', (request, response) => {
     response.sendFile(path.join(__dirname, 'index.html'))
 
     response.send('<h1> This thanks you very much Pipeline </h1>')
