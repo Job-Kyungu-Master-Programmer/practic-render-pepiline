@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Deploy logiciel
-        env: 
-          deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        env:
+          deploy_url: https://api.render.com/deploy/srv-${{ secrets.RENDER_DEPLOY_HOOK_URL }}
         run: |
          curl -v "$deploy_url"
 
