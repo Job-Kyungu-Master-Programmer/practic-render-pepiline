@@ -5,8 +5,6 @@ const path = require('path')
 
 app.get('/ping', (request, response) => {
     response.sendFile(path.join(__dirname, 'index.html'))
-
-    response.send('<h1> This thanks you very much Pipeline </h1>')
 })
 
 const PORT = process.env.PORT || 3002
