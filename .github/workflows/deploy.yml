@@ -1,0 +1,18 @@
+# .github/workflows/ci.yml
+
+on:
+ push:
+    branches:
+          - main
+
+jobs: 
+ build-app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy logiciel
+        env:
+          deploy_url: https://api.render.com/deploy/srv-${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+         curl -v "$deploy_url"
+
